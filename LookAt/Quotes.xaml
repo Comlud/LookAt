@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LookAt.Quotes">
+	<StackLayout Padding="10, 10, 10, 10">
+		<Button Text="Next"
+				HorizontalOptions="Center"
+				Clicked="OnNextClicked"/>
+
+		<Label BindingContext="{x:Reference slider}"
+			   Text="{Binding Value, StringFormat='Font Size: {0:F0}'}"/>
+
+		<Slider Maximum="64"
+				Minimum="16"
+				x:Name="slider"/>
+
+		<Label x:Name="quote"
+			   BindingContext="{x:Reference slider}"
+			   FontSize="{Binding Value}"/>
+	</StackLayout>
+</ContentPage>

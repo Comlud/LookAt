@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LookAt.OrientationPage">
+	<StackLayout>
+		<Label Text="Phone Orientation"
+			   x:Name="orientationLabel"
+			   HorizontalOptions="Center"
+			   Padding="0, 48, 0, 0"
+			   FontSize="24"/>
+	</StackLayout>
+</ContentPage>

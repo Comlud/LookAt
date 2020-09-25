@@ -10,7 +10,8 @@ namespace LookAt
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
+			//MainPage = new MainPage();
+			MainPage = new OrientationPage();
 		}
 
 		protected override void OnStart()
