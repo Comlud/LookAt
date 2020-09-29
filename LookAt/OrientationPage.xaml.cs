@@ -7,6 +7,8 @@ namespace LookAt
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class OrientationPage : ContentPage
 	{
+		
+
 		public OrientationPage()
 		{
 			InitializeComponent();
@@ -15,8 +17,11 @@ namespace LookAt
 			OrientationSensor.ReadingChanged += (object sender, OrientationSensorChangedEventArgs e) =>
 			{
 				var orientation = e.Reading.Orientation;
+				float x = orientation.X;
+				float y = orientation.Y;
+				float z = orientation.Z;
 
-				orientationLabel.Text = $"Orientation X: {orientation.X:F2}, Y: {orientation.Y:F2}, Z: {orientation.Z:F2}, W: {orientation.W:F2}";
+				orientationLabel.Text = $"Orientation X: {x:F2}, Y: {y:F2}, Z: {z:F2}";
 			};
 
 			OrientationSensor.Start(SensorSpeed.Fastest);
