@@ -1,10 +1,6 @@
 ﻿using SimpleSockets;
 using SimpleSockets.Client;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -18,18 +14,17 @@ namespace LookAt
 
 		public TestClient()
 		{
-			InitializeComponent();
-
 			client = new SimpleSocketTcpClient();
 			BindEvents();
-			client.StartClient("2.tcp.ngrok.io", 15265); // 127.0.0.1:2000
+
+			InitializeComponent();
 		}
 
 		private void BindEvents()
 		{
 			client.ConnectedToServer += (SimpleSocketClient socket) =>
 			{
-				SetLabelText($"Connected to server on IP {socket.Ip}");
+				SetLabelText("Connected to server");
 			};
 
 			client.DisconnectedFromServer += (SimpleSocketClient socket) =>
@@ -55,6 +50,11 @@ namespace LookAt
 			{
 				label.Text = text;
 			});
+		}
+
+		private void buttonClicked(object sender, EventArgs e)
+		{
+			client.StartClient(ipEntry.Text, Int32.Parse(portEntry.Text));
 		}
 	}
 }

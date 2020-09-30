@@ -2,9 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LookAt.TestClient">
-	<StackLayout>
+	<StackLayout Padding="20, 20, 20, 20">
+		<Entry x:Name="ipEntry"
+			   Placeholder="IP"/>
+		<Entry x:Name="portEntry"
+			   Placeholder="Port"/>
+		<Button x:Name="button"
+				Clicked="buttonClicked"
+				Text="Connect"/>
 		<Label x:Name="label"
-			   Text="Messages from server should come up here"
-			   Padding="20, 20, 20, 20"/>
+			   Text="Messages from server should come up here"/>
 	</StackLayout>
 </ContentPage>
